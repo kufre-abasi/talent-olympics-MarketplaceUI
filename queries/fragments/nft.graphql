@@ -1,8 +1,0 @@
-fragment nft on NFTEntity {
-  id
-  metadata
-  issuer
-  currentOwner
-  blockNumber
-  burned
-}
