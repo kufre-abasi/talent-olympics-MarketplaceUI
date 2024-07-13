@@ -1,0 +1,18 @@
+export type NeoButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'primary-rounded'
+  | 'secondary-rounded'
+  | 'outlined-rounded'
+  | 'rounded'
+  | 'k-blue'
+  | 'k-pink'
+  | 'connect'
+  | 'connect-dropdown'
+  | 'icon'
+  | 'disabled-secondary'
+  | 'text'
+  | 'pill'
+  | 'border-icon'
+
+export type NeoMessageVariant = 'warning' | 'success' | 'danger' | 'info'

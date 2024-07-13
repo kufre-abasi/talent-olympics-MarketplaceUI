@@ -1,0 +1,37 @@
+#import "../../fragments/event.graphql"
+#import "../../fragments/nftSubsquid.graphql"
+
+query profileStatsById($id: String!, $denyList: [String!]) {
+  listed: events(where: { interaction_eq: LIST, currentOwner_eq: $id }) {
+    id
+    meta
+  }
+
+  obtained: nftEntitiesConnection(
+    where: {
+      currentOwner_eq: $id
+      burned_eq: false
+      metadata_not_eq: ""
+      issuer_not_in: $denyList
+    }
+    orderBy: name_ASC
+  ) {
+    totalCount
+  }
+
+  sold: events(
+    where: { interaction_eq: BUY, currentOwner_eq: $id, caller_not_eq: $id }
+  ) {
+    id
+    meta
+  }
+
+  invested: events(
+    where: { caller_eq: $id, interaction_eq: BUY, nft: { burned_eq: false } }
+  ) {
+    ...event
+    nft {
+      ...nftSubsquid
+    }
+  }
+}

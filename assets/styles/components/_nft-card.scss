@@ -1,0 +1,91 @@
+@function hex-to-rgba($hex, $alpha: 1) {
+  @return rgba(red($hex), green($hex), blue($hex), $alpha);
+}
+
+.nft-card {
+  @apply relative h-full bg-background-color border border-card-border-color;
+
+  @include ktheme() {
+    .border-stacked {
+      border-color: theme('card-border-color-light') !important;
+    }
+
+    &:not(.loading):hover {
+      border: 1px solid theme('border-color');
+
+      .nft-media::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: hex-to-rgba(theme('background-color'), 0.2);
+      }
+    }
+  }
+  .show-on-hover {
+    display: none !important;
+  }
+
+  a:hover {
+    color: unset !important;
+
+    .show-on-hover,
+    .show-always {
+      display: flex !important;
+      @apply z-10;
+    }
+  }
+
+  .action-container {
+    position: absolute;
+    bottom: 1rem;
+  }
+  &__stacked {
+    .action-container {
+      right: 10px;
+    }
+  }
+
+  .stacked-shadow {
+    @include ktheme() {
+      box-shadow: 5px 5px theme('card-border-color-light');
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  .theme-background {
+    @include ktheme() {
+      background: theme('background-color');
+    }
+  }
+}
+.card-icon {
+  @apply absolute z-[1] right-4 top-4;
+}
+.nft-media {
+  box-shadow: none;
+}
+
+.nft-media-info {
+  @include ktheme() {
+    border-top: 1px solid theme('card-border-color');
+  }
+  padding: 13px;
+  min-height: 102px;
+
+  &__slim {
+    min-height: 83px;
+  }
+
+  &__minimal {
+    padding: 9px;
+    min-height: 76px;
+  }
+  &-footer {
+    overflow: visible;
+    line-height: 1.5rem;
+  }
+}

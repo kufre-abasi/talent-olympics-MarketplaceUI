@@ -1,0 +1,20 @@
+#import "../../fragments/collection.graphql"
+#import "../../fragments/collectionDetails.graphql"
+
+query collectionCuratedList($list: [String!]) {
+  collectionEntities(
+    where: {
+      nfts_some: { burned_eq: false }
+      name_isNull: false
+      name_not_eq: ""
+      id_in: $list
+    }
+    orderBy: blockNumber_DESC
+  ) {
+    ...collection
+    ...collectionDetails
+    meta {
+      image
+    }
+  }
+}

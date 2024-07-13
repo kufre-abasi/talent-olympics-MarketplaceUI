@@ -1,0 +1,13 @@
+/* // @import '@/styles/index.scss'; TODO: how to import this file? */
+@import 'bulma/bulma.sass';
+@import '@oruga-ui/oruga-next/src/scss/oruga';
+@import './scss/tailwind.scss';
+
+html,
+body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.htw-sandbox-contain {
+  contain: inherit;
+}

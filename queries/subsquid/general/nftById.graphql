@@ -1,0 +1,38 @@
+#import "../../fragments/nft.graphql"
+#import "../../fragments/nftDetails.graphql"
+
+query nftById($id: String!) {
+  nftEntity: nftEntityById(id: $id) {
+    ...nft
+    ...nftDetails
+    collection {
+      id
+      name
+      floorPrice: nfts(
+        where: { burned_eq: false, price_not_eq: "0" }
+        orderBy: price_ASC
+        limit: 1
+      ) {
+        price
+      }
+    }
+    events {
+      interaction
+      timestamp
+      meta
+    }
+    meta {
+      id
+      name
+      description
+      image
+      animation_url: animationUrl
+      attributes {
+        key: trait
+        value
+      }
+    }
+    royalty
+    recipient
+  }
+}

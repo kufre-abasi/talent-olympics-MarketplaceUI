@@ -1,0 +1,55 @@
+.button {
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: all 0.3s;
+
+  @include ktheme() {
+    color: theme('text-color');
+    background-color: theme('background-color');
+  }
+}
+
+.button.is-text {
+  &:hover {
+    border: none;
+    @include ktheme() {
+      background-color: theme('k-hovergrey');
+    }
+  }
+
+  &:focus {
+    @include ktheme() {
+      background-color: theme('k-hovergrey');
+    }
+    border: none;
+  }
+}
+
+button.button.is-bordered {
+  @include ktheme() {
+    border-top: 2px solid theme('k-primary') !important;
+  }
+}
+
+button.button.is-bordered-light {
+  border-color: transparent;
+  @include ktheme() {
+    border-top: 1px solid theme('k-primary') !important;
+  }
+}
+
+button.button.navbar-link-background {
+  @include ktheme() {
+    border-top: 2px solid theme('k-accentlight2') !important;
+  }
+}
+
+.share-button {
+  width: 40px;
+}
+
+.only-border-top {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}

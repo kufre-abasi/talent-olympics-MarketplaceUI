@@ -1,0 +1,349 @@
+@include touch {
+  .navbar {
+    .navbar-menu {
+      width: 100vw;
+      height: 100vh;
+
+      @include ktheme() {
+        border-top: 1px solid theme('border-color');
+        background: theme('background-color');
+      }
+
+      @include mobile {
+        padding: 0;
+      }
+
+      .navbar-end {
+        display: flex;
+        flex-direction: column;
+
+        .navbar-item {
+          display: flex;
+          align-items: center;
+
+          height: $navbar-mobile-min-height;
+          padding: 0 1.25rem;
+
+          @include mobile {
+            padding: 0 1.25rem;
+          }
+
+          @include tablet-only {
+            padding: 0 $fluid-container-padding;
+          }
+
+          @include ktheme() {
+            border-bottom: 1px solid theme('border-color');
+          }
+
+          &.is-active {
+            @include ktheme() {
+              border-top: 1px solid theme('text-color-inverse');
+            }
+          }
+
+          &--noBorder {
+            border-bottom: none;
+          }
+
+          &-body {
+            overflow-y: auto;
+            height: calc(100% - 118px);
+            position: relative;
+            align-items: flex-start !important;
+            padding: 1.5rem 1.25rem !important;
+
+            &--no-padding {
+              padding: 0 !important;
+            }
+          }
+
+          span {
+            vertical-align: middle;
+          }
+
+          .icon {
+            margin: 0;
+
+            &--right {
+              @include set-position(center, right);
+            }
+          }
+
+          &--fullpage {
+            @apply fixed h-screen w-full z-[100];
+            top: $navbar-desktop-min-height;
+            @include mobile {
+              top: $navbar-mobile-min-height;
+            }
+            @include ktheme() {
+              background: theme('background-color');
+            }
+          }
+
+          &--reverse {
+            @include ktheme() {
+              background: theme('background-color-inverse');
+              color: theme('text-color-inverse');
+            }
+          }
+
+          .navbar-link {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .custom-navbar-item {
+      margin-left: 0 !important;
+    }
+
+    #NavProfile {
+      align-self: auto;
+      width: 100%;
+      padding: 24px 20px 0;
+
+      @include mobile {
+        padding: 1rem 1.25rem;
+      }
+
+      .button-connect-wallet {
+        @apply w-4/5 h-[67px] block capitalize mt-0 mb-5 mx-auto rounded-none;
+
+        @include ktheme() {
+          box-shadow: theme('primary-shadow');
+          color: theme('black');
+          background: theme('k-primary');
+        }
+
+        @include mobile {
+          margin: 0;
+          padding: 0.75rem;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      div {
+        flex-grow: 1;
+      }
+    }
+
+    .navbar-brand {
+      .logo {
+        padding-left: 0 !important;
+        img {
+          height: 40px;
+          width: unset !important;
+        }
+      }
+    }
+
+    &.is-active .navbar-brand {
+      min-height: $navbar-desktop-min-height;
+      @include mobile {
+        min-height: $navbar-mobile-min-height;
+      }
+    }
+  }
+}
+
+.navbar {
+  min-height: $navbar-desktop-min-height;
+  transform: translateZ(0px);
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  width: 100vw;
+  background: $white;
+  @apply z-[999] #{!important};
+
+  @include mobile {
+    min-height: $navbar-mobile-min-height;
+  }
+
+  @include touch {
+    display: flex;
+    align-items: center;
+  }
+
+  @include ktheme() {
+    background: theme('background-color');
+    border-bottom: 1px solid theme('border-color');
+  }
+
+  &.is-spaced {
+    padding: 0;
+    & > .container {
+      .navbar-menu {
+        margin-right: 0;
+
+        .button {
+          height: 40px;
+        }
+      }
+
+      max-width: 100% !important;
+    }
+  }
+
+  .navbar-item {
+    @apply capitalize font-normal cursor-pointer rounded-none #{!important};
+
+    @include ktheme() {
+      color: theme('text-color');
+    }
+    &:hover {
+      @include ktheme() {
+        color: theme('link-hover');
+      }
+      background-color: inherit;
+    }
+  }
+
+  .navbar-brand {
+    align-items: center;
+
+    @include mobile {
+      padding:0 $fluid-container-padding-mobile;
+    }
+    @include tablet-only {
+      padding: 0 $fluid-container-padding;
+    }
+
+    .logo {
+      img {
+        width: 143px;
+      }
+    }
+
+    .navbar-burger {
+      height: 2.5em;
+      width: 2.5em;
+      @include ktheme() {
+        background: theme('background-color');
+        color: theme('text-color');
+      }
+    }
+  }
+
+  .navbar-start {
+    flex: 1;
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .search-navbar {
+    box-shadow: none;
+    width: min-content;
+    min-width: 100px;
+    max-width: 600px;
+
+    @include ktheme() {
+      color: theme('text-color');
+    }
+  }
+
+  &__identity {
+    @include from($desktop) {
+      display: none;
+    }
+  }
+
+  &__avatar-icon {
+    @apply rounded-[24.5px];
+
+    @include ktheme() {
+      border: 1.5px solid theme('text-color');
+    }
+  }
+
+  button.button.is-bordered-light {
+    @apply rounded-none;
+  }
+
+  .text-vertical-align-top {
+    vertical-align: top !important;
+  }
+  .color-mode-icon {
+    width: 12px;
+    height: 12px;
+  }
+  .navbar-explore {
+    .menu-item {
+      @apply cursor-pointer;
+      @include ktheme() {
+        color: theme('text-color');
+      }
+
+      &.is-active {
+        font-weight: 700;
+        background-color: transparent !important;
+        @include ktheme() {
+          color: theme('text-color') !important;
+          &:hover {
+            background-color: transparent !important;
+          }
+        }
+      }
+      &:hover {
+        background-color: transparent !important;
+        @include ktheme() {
+          color: theme('link-hover') !important;
+        }
+      }
+      &.is-disabled {
+        @apply cursor-not-allowed;
+        @include ktheme() {
+          color: theme('k-shade');
+        }
+      }
+    }
+  }
+
+  .fixed-stack {
+    height: $navbar-desktop-min-height;
+    @apply box-border fixed w-full z-[989] overflow-hidden rounded-none left-0 top-0;
+
+    @include ktheme() {
+      border-bottom: 1px solid theme('border-color');
+      background: theme('background-color');
+    }
+
+    > .control {
+      margin-right: auto !important;
+
+      > .input {
+        height: 50px;
+      }
+
+      > .icon {
+        top: 10%;
+      }
+    }
+
+    @include mobile {
+      height: $navbar-mobile-min-height !important;
+    }
+
+    @include touch {
+      $touch-padding-x: 20px;
+    }
+  }
+
+  .cancel-btn {
+    @apply cursor-pointer capitalize border-[none];
+  }
+
+  .language-heading {
+    height: 2.5rem;
+  }
+}
+
+.has-navbar-fixed-top {
+  padding-top: $navbar-desktop-min-height !important;
+  @include mobile {
+    padding-top: $navbar-mobile-min-height !important;
+  }
+}

@@ -1,0 +1,131 @@
+<template>
+  <div data-testid="item-section-buy">
+    <GalleryItemPriceSection v-if="nft.price" title="Price" :price="nft.price">
+      <div v-if="Number(nft.price)" class="flex desktop-full-w">
+        <div class="flex buy-button-width">
+          <NeoButton
+            :label="label"
+            size="large"
+            class="button-height w-full"
+            variant="primary"
+            data-testid="item-buy"
+            :disabled="isRemark"
+            @click="onClick" />
+        </div>
+
+        <NeoButton
+          v-if="!isRemark"
+          class="button-height square-button-width border-l-0"
+          data-testid="item-add-to-cart"
+          @click="onClickShoppingCart">
+          <NeoIcon
+            size="medium"
+            class="w-4 h-4"
+            :icon="
+              shoppingCartStore.isItemInCart(nft.id)
+                ? 'fa-striked-out-cart-shopping'
+                : 'fa-shopping-cart-outline-sharp'
+            "
+            pack="fa-kit" />
+        </NeoButton>
+      </div>
+
+      <div v-else>{{ $t('nft.notListed') }}</div>
+    </GalleryItemPriceSection>
+
+    <OnRampModal v-model="showRampModal" @close="showRampModal = false" />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { NeoButton, NeoIcon } from '@kodadot1/brick'
+import GalleryItemPriceSection from '../GalleryItemActionSection.vue'
+import { useShoppingCartStore } from '@/stores/shoppingCart'
+import { usePreferencesStore } from '@/stores/preferences'
+import { openShoppingCart } from '@/components/common/shoppingCart/ShoppingCartModalConfig'
+import type { NFT } from '@/components/rmrk/service/scheme'
+import { nftToShoppingCartItem } from '@/components/common/shoppingCart/utils'
+
+const props = defineProps<{ nft: NFT }>()
+
+const { $i18n } = useNuxtApp()
+const preferencesStore = usePreferencesStore()
+const shoppingCartStore = useShoppingCartStore()
+
+const instance = getCurrentInstance()
+const { doAfterLogin } = useDoAfterlogin(instance)
+const showRampModal = ref(false)
+const { urlPrefix } = usePrefix()
+const { isRemark } = useIsChain(urlPrefix)
+
+enum BuyStatus {
+  BUY,
+  CART,
+}
+
+const btnStatus = computed(() =>
+  shoppingCartStore.isItemInCart(props.nft.id) ? BuyStatus.CART : BuyStatus.BUY,
+)
+
+const label = computed(() => {
+  if (btnStatus.value === BuyStatus.CART) {
+    return $i18n.t('shoppingCart.gotToCart')
+  }
+  return $i18n.t(
+    preferencesStore.getReplaceBuyNowWithYolo ? 'YOLO' : 'nft.action.buy',
+  )
+})
+
+const openCompletePurcahseModal = () => {
+  shoppingCartStore.setItemToBuy(nftToShoppingCartItem(props.nft))
+  preferencesStore.setCompletePurchaseModal({
+    isOpen: true,
+    mode: 'buy-now',
+  })
+}
+
+function onClick() {
+  if (btnStatus.value === BuyStatus.CART) {
+    openShoppingCart()
+  } else {
+    doAfterLogin({ onLoginSuccess: openCompletePurcahseModal })
+  }
+}
+
+const onClickShoppingCart = () => {
+  if (shoppingCartStore.isItemInCart(props.nft.id)) {
+    shoppingCartStore.removeItem(props.nft.id)
+  } else {
+    shoppingCartStore.setItem(nftToShoppingCartItem(props.nft))
+  }
+}
+</script>
+<style lang="scss" scoped>
+@import '@/assets/styles/abstracts/variables';
+
+:deep(.button-height) {
+  height: 55px !important;
+}
+
+.square-button-width {
+  width: 55px;
+}
+.buy-button-width {
+  width: 10rem;
+
+  @include until-widescreen {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.desktop-full-w {
+  @include until-widescreen {
+    width: 100%;
+  }
+}
+</style>

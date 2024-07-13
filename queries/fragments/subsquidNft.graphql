@@ -1,0 +1,17 @@
+fragment subsquidNft on NFTEntity {
+  id
+  metadata
+  issuer
+  currentOwner
+  blockNumber
+  burned
+  collection {
+    id
+    name
+  }
+  meta {
+    id
+    name
+    image
+  }
+}

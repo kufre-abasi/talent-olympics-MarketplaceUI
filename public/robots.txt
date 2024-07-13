@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: */transfer
+
+Sitemap: https://kodadot.xyz/sitemap.xml

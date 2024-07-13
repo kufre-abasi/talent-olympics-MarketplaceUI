@@ -1,0 +1,762 @@
+{
+  "translation": "Deutsch",
+  "create": "Erstellen",
+  "credit": "Guthaben",
+  "gallery": "Gallerie",
+  "collection": "Sammlung",
+  "collections": "Sammlungen",
+  "classic": "Classic",
+  "account": "Konto",
+  "accounts": "Konten",
+  "amount": "Menge",
+  "transfer": "Transfer",
+  "fullscreen": "Vollbild",
+  "newTab": " In neuem Tab öffnen",
+  "assets": "Posten",
+  "transform": "Umwandeln",
+  "settings": "Einstellungen",
+  "first NFT market explorer on Kusama and Polkadot": "erster NFT marktexplorer auf Kusama und Polkadot",
+  "legend": "Legende",
+  "owner": "Besitzer",
+  "facts": "Fakten",
+  "computed id": "Errechnete id",
+  "create collection": "Sammlung erstellen",
+  "Select collection where do you want mint your token": "Wähle die Sammlung, in die deine Token gemintet werden sollen",
+  "Maximum NFTs in collection": "Maximale Anzahl an NFTs in der Sammlung",
+  "name": "Name",
+  "simple": "Simple",
+  "about": "Über uns",
+  "ambassador program": "Ambassador Programm",
+  "press kit": "Pressemappe",
+  "careers": "Karriere",
+  "contribute": "Mach mit",
+  "qrCode": "QR Code",
+  "reload": "Neu laden",
+  "documentation": "Dokumentation",
+  "referralProgram": "Empfehlungsprogramm",
+  "theatre": "Bühne",
+  "view": "Ansehen",
+  "price": "Preis",
+  "royalty": "Tantiemen",
+  "Instance_tooltip": "Eine Instance ist der Identifikator eines NFTs, wie ein Ticker auf dem Markt. Es ist ein \"kurzer computer-freundlicher name\"",
+  "Minting Settings": "Einstellungen fürs Minten",
+  "user interface mode": "Benutzeroberflächenmodus",
+  "Layout Options": "Anzeigeoptionen",
+  "Gallery Items Per Page": "Gallerieeinträge pro Seite",
+  "Collections Per Page": "Sammlungen pro Seite",
+  "I am helping to cover costs": "Ich helfe die Kosten zu decken",
+  "I do not want to support": "Ich will nicht unterstützen",
+  "createNftExplainer": "Wenn deine Sammlung erst kürzlich geminted wurde und hier nicht auftaucht, einfach kurz warten und es wird bald angezeigt",
+  "passion": "Lieblings-Feed",
+  "search": {
+    "seeAll": "Alle anzeigen",
+    "rankings": "Rangliste"
+  },
+  "topCollections": {
+    "timeFrames": {
+      "week": "7 Tage",
+      "month": "30 Tage",
+      "quarter": "90 Tage",
+      "all": "Alle"
+    }
+  },
+  "funfacts": {
+    "1": {
+      "heading": "Wusstest Du...",
+      "question": "das damals in 2015, das erste offizielle NFT Etheria auf Ethereum entstand?"
+    },
+    "2": {
+      "heading": "Wusstest Du...",
+      "question": "dass der erste 'NFT-artige' Standard auf Kusama nichts weiter als eine Byte-Zeichenfolge war?"
+    },
+    "3": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot damit begann, die Anzeige von auf React-basierenden DotApps in Vuejs umzuschreiben?"
+    },
+    "4": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot an einer experimentellen NFT Landschaft namens MetaPrime arbeitet?"
+    },
+    "5": {
+      "heading": "Wusstest Du...",
+      "question": "das es da draußen so viel psychodelische und trippige NFT Kunst gib? Wussten wir auch nicht."
+    },
+    "6": {
+      "heading": "Kannst Du schätzen...",
+      "question": "wie viele Parachains KodaDot unterstützt? Finde die korrekte Antwort auf unserem Discord!"
+    },
+    "7": {
+      "heading": "Weißt Du...",
+      "question": "wie viele GitHub forks das KodaDot Repositorium hat?"
+    },
+    "8": {
+      "heading": "Weißt Du...",
+      "question": "wie viele GitHub stars das KodaDot Repositorium hat?"
+    },
+    "9": {
+      "heading": "Meinst Du das...",
+      "question": "KodaDot seinen eigenen $koda token an den Start bringen sollte?"
+    },
+    "10": {
+      "heading": "Kannst Du schätzen...",
+      "question": "wie viele NFTs KodaDot von allen Parachains verzeichnet hat?"
+    },
+    "11": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot auch eine App fürs Smartphone hat?"
+    },
+    "12": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot zu den ersten NFT Gallerien zählte, die schon im Januar 2021 erweiterte Realität für 3D Objekte unterstützte?"
+    },
+    "13": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot in seinen Anfängen oft den Karren vor die Wand gefahren hat? Ja, jedes Startup macht Fehler um aus diesen zu lernen. Dadurch wissen wir das unser Produkt besser wird."
+    },
+    "14": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDots Werte und Ethos darauf beruhen aufzuteilen, dezentralisiert und von der Community geführt zu werden? Mach auch Du mit bei unserer stetig wachsenden Community!"
+    },
+    "15": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot innerhalb eines Monats, drei seiner Logos ersetzt hat?"
+    },
+    "16": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDots Community Übersetzungsprogramm der beste Wachstumshack zur Beteiligung der Community war?"
+    },
+    "17": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot 420 Discordmitglieder auf seinem Investoren Pitch Deck hat? Was für ein Zufall."
+    },
+    "18": {
+      "heading": "Wusstest Du...",
+      "question": "das Kodadots Gründer das forken ihrer Codebase unterstützen und es begrüßen mehr KodaDot Instanzen in der Wildnis zu sehen?"
+    },
+    "19": {
+      "heading": "Wusstest Du...",
+      "question": "das einer der Gründer von KodaDot eine Plattform für eSports im Jahr 2006 betrieben hat?"
+    },
+    "20": {
+      "heading": "Wusstest Du...",
+      "question": "dass diese Fakten überhaupt nicht wichtig sind? Wir verbringen einfach gerne Zeit mit dir, bis deine Aktion auf der Blockchain ausgeführt wird."
+    },
+    "21": {
+      "heading": "Vergiss nicht...",
+      "question": "genug Wasser zu tringen und hydriert zu bleiben!"
+    },
+    "22": {
+      "heading": "Wusstest Du...",
+      "question": "das wir mehr als 500 eröffnete Issues im Backlog von GitHub haben?"
+    },
+    "23": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot eine inklusive Kultur unterstützt um eine angenehme Atmosphäre für eine breites Spektrum an Künstlern zu ermöglichen und KodaDots Wachstum zu fördern?"
+    },
+    "24": {
+      "heading": "Wusstest Du...",
+      "question": "das Du durch das eröffnen eines pull request in KodaDots Repositorium, deinen Fun Fact hier stehen haben kannst?"
+    },
+    "25": {
+      "heading": "Hast Du heute schon...",
+      "question": "deine JPEG Verkäufe kontrolliert?"
+    },
+    "26": {
+      "heading": "Hast Du...",
+      "question": "heute etwas schönes gemintet?"
+    },
+    "27": {
+      "heading": "Wusstest Du...",
+      "question": "das die erste Version von KodaDot schlimmer aussah als Craiglist im Jahr 1999?"
+    },
+    "28": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDots Gründer in der Vergangenheit einige Ethereum und Polkadot hackathons gewonnen haben?"
+    },
+    "29": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot dutzende Investoren abgelehnt hat, die sie unterstützen wollten?"
+    },
+    "30": {
+      "heading": "Wusstest Du...",
+      "question": "das sich KodaDot um den Klimawandel sorgt und deshalb in Portugal Böume pflanzt, genannt KodaForest?"
+    },
+    "31": {
+      "heading": "Wusstest Du...",
+      "question": "das die Gründer von KodaDot an simulierte Realitäten glauben?"
+    },
+    "32": {
+      "heading": "Wusstest Du...",
+      "question": "das Du heute zum anbeißen aussiehst?"
+    },
+    "33": {
+      "heading": "Wusstest Du...",
+      "question": "das an unserer Codebase Menschen aus aller Welt mitarbeiten?"
+    },
+    "34": {
+      "heading": "Wusstest Du...",
+      "question": "das KodaDot schon 10000 Kilogramm CO2 ausgeglichen hat, was in etwa 2,500 Cheeseburgern entspricht."
+    },
+    "35": {
+      "heading": "Wusstest Du...",
+      "question": "das Du eine Übersicht aller Tastaturkürzel mit einem Klick auf '?' erhältst?"
+    },
+    "36": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot küzlich die Unterstützung für den Basilisk NFT Marktplatz hinzugefügt hat?"
+    },
+    "37": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot bald Auktionen für den Basilisk NFT Marktplatz einführen wird?"
+    },
+    "38": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot Guild Rewards über $180T an Teilnehmer für ihre Mitarbeit ausgezahlt hat?"
+    },
+    "39": {
+      "heading:": "Wusstest Du...",
+      "question": "das Du für die Mitarbeit bei KodaDot bezahlt werden kannst?"
+    },
+    "40": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot mehr als 70+ Beitragende zur Codebase hat? Du kannst das Faktenchecken auf KodaDots Github."
+    },
+    "41": {
+      "heading:": "Wusstest Du...",
+      "question": "das Kodadots Github Repositorium mehr als 200 forks erreicht hat?"
+    },
+    "42": {
+      "heading:": "Wusstest Du...",
+      "question": "das Beitragende zu KodaDot schon mehr als 1500 pull requests gemacht haben? Du kannst auch einen machen!"
+    },
+    "43": {
+      "heading:": "Wusstest Du...",
+      "question": "das Du Teil der QA Gilde sein kannst um uns zu helfen die Qualität von KodaDot zu prüfen und dafür bezahlt zu werden?"
+    },
+    "44": {
+      "heading:": "Wusstest Du...",
+      "question": "das Du ein Teil des KodaDot Ambassadors Programm sein kannst und uns bei verschieden Aufgaben helfen kannst?"
+    },
+    "45": {
+      "heading:": "Wusstest Du...",
+      "question": "das Du ein Teil der Code Review Gilde sein kannst um die Qualität des Codes von KodaDot zu prüfen und dafür bezahlt zu werden?"
+    },
+    "46": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot einen zwei-wöchentlichen Rückblick über KodaDots Fortschritte, namens Meta Hours, veranstaltet?"
+    },
+    "47": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDots Team daran arbeitet MoonRiver und MoonBeam einzuführen?"
+    },
+    "48": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDots Team daran arbeitet Astar und Shiden einzuführen?"
+    },
+    "49": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot der erste inoffizielle RMRK Explorer war? Wir hacken schnell."
+    },
+    "50": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDots Team sein eigenes NFT Protokoll namens Reactive NFTs herausgibt? Auf YouTube findest Du ein Video zur Präsentation."
+    },
+    "51": {
+      "heading:": "Hast Du dich... ",
+      "question": "schon in Unterhaltungen auf Discord eingebracht?"
+    },
+    "52": {
+      "heading:": "Errätst Du...",
+      "question": "welche Parachain als nächstes von KodaDot unterstützt wird? "
+    },
+    "53": {
+      "heading:": "Kannst Du dir vorstellen...",
+      "question": "wie viele Gilden KodaDot benötigt um das derzeitige Entwicklungstempo zu halten?"
+    },
+    "54": {
+      "heading:": "Errätst Du...",
+      "question": "wann KodaDots Github Repositorium 1000 stars knackt?"
+    },
+    "55": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot die beliebtesten Open-Source Inhalte auf Polkadot produziert, nach Parity, MoonBeam, Acala und Astar?"
+    },
+    "56": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot letztendlich öffentliches Gut auf Polkadot wird?"
+    },
+    "57": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDots Team darüber nachdenkt eine eigene Parachain zu haben? wyt?"
+    },
+    "58": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDots auf seinem Allzeithoch im Februar 2022, 270 pull-requests am laufen hatte?"
+    },
+    "59": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot sein HQ in Slowenien, Europa hat?"
+    },
+    "60": {
+      "heading:": "Wusstest Du...",
+      "question": "das Du KodaDot für das lösen einiger Probleme bezahlt werden kannst?"
+    },
+    "61": {
+      "heading:": "Wusstest Du...",
+      "question": "das Du KodaDot helfen kannst in dem Du Bugs meldest und dafür bezahlt wirst?"
+    },
+    "62": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot zu seinem Allzeithoch 20 Beitragende in einem Monat hatte? Hilfst Du uns dabei diesen Rekord zu brechen?"
+    },
+    "63": {
+      "heading:": "Wusstest Du...",
+      "question": "das bei KodaDot die Beitragenden ihre Auszahlung selbst aus den Gildenbelohnungen veranlassen?"
+    },
+    "64": {
+      "heading:": "Wusstest Du...",
+      "question": "das KodaDot eine ausgezeichnete Peer Culture pflegt?"
+    }
+  },
+  "sort": {
+    "EMOTES_COUNT_DESC": "Meiste Reaktionen",
+    "BLOCK_NUMBER_DESC": "Kürzlich erstellt",
+    "BLOCK_NUMBER_ASC": "Älteste",
+    "UPDATED_AT_DESC": "Küzlich interagiert",
+    "UPDATED_AT_ASC": "Unpopulär",
+    "PRICE_DESC": "Preis: Hoch zu Niedrig",
+    "PRICE_ASC": "Presi: Niedrig zu Hoch",
+    "SN_ASC": "Alphabetisch",
+    "blockNumber_DESC": "Kürzlich erstellt",
+    "blockNumber_ASC": "Älteste",
+    "updatedAt_DESC": "Kürzlich interagiert",
+    "updatedAt_ASC": "Unpopulär",
+    "price_DESC": "Preis: Hoch zu Niedrig",
+    "price_ASC": "Preis: Niedrig zu Hoch",
+    "sn_ASC": "Alphabetisch",
+    "listed": "Jetzt kaufen",
+    "own": "Eigene",
+    "collection": {
+      "blockNumber_DESC": "Neue zuerst",
+      "blockNumber_ASC": "Ältere zuerst",
+      "updatedAt_DESC": "Kürzlich interagiert",
+      "updatedAt_ASC": "Unpopulär",
+      "price_DESC": "Preis: Hoch zu Niedrig",
+      "price_ASC": "Preis: Niedrig zu Hoch",
+      "sn_ASC": "Alphabetisch",
+      "listed": "Jetzt kaufen",
+      "EMOTES_COUNT_DESC": "Meiste Reaktionen",
+      "BLOCK_NUMBER_DESC": "Kürzlich erstellt",
+      "BLOCK_NUMBER_ASC": "Älteste",
+      "UPDATED_AT_DESC": "Kürzlich interagiert",
+      "UPDATED_AT_ASC": "Unpopulär",
+      "PRICE_DESC": "Preis: Hoch zu Niedrig",
+      "PRICE_ASC": "Preis: Niedrig zu Hoch",
+      "SN_ASC": "Alphabetisch"
+    }
+  },
+  "query": {
+    "priceRange": {
+      "minPrice": "MIN PREIS",
+      "maxPrice": "MAX PREIS",
+      "priceValidation": "Der Mindestpreis muss kleiner als der Maximalpreis sein!",
+      "range": "Preisspanne"
+    }
+  },
+  "mint": {
+    "submit": "Klicken um NFT(s) zu erstellen",
+    "estimate": "Zeig mir die Transaktionsgebühr",
+    "estimated": "Transaktionsgebühr beträgt schätzungsweise",
+    "success": "Gratulation zum neuen NFT",
+    "shareWithFriends": "Teile {0} mit deinen Freunden",
+    "unlimited": "Unbegrenzt viele Gegenstände in deiner Sammlung",
+    "nfsw": "Expliziter Inhalt (NSFW)",
+    "listForSale": "NFT zum Verkauf einstellen",
+    "mass": "NFT Massenmint",
+    "command": "Liste der Kommandos für Massenmint",
+    "transform": "Transformiere Komanndos in NFT um",
+    "deposit": "Derzeitiger Kontostand",
+    "expert": {
+      "show": "Zeige erweiterte Einstellungen",
+      "hide": "Verberge erweiterete Einstellungen",
+      "count": "Zur Zeit hast Du {0} übereinstimmende Adressen",
+      "countGlitch": "Du hast mehr Adressen, als zur Verfügung stehende Editionen. Das kann zu Problemen führen. Du solltest das EDITION Feld auf {0} setzen",
+      "postfix": "Füge einen hashtag und Index hinter den Namen (z.B. #1)",
+      "sync": "Synchronisiere Editionen mit {0}"
+    },
+    "royalty": {
+      "rate": "Tantiemen Rate",
+      "mine": "Zahle Tantiemen an das Konto des Erstellers",
+      "receiver": "Zielkonto für die Tantiemen"
+    },
+    "collection": {
+      "name": {
+        "label": "Name der Sammlung",
+        "placeholder": "Trage den Namen der Sammlung ein",
+        "message": "Name deiner Sammlung. So wird es in der Gallerie angezeigt"
+      },
+      "description": {
+        "label": "Beschreibung der Sammlung",
+        "placeholder": "Trage die Beschreibung der Sammlung ein",
+        "message": "Beschreibung deiner Sammlung. Markdown wird unterstützt"
+      },
+      "symbol": {
+        "label": "Symbol (Kurzname)",
+        "placeholder": "3-5 Buchstaben langer Name",
+        "message": "Das Symbol das dem NFT anhängt: zum Beispiel wird Kusama mit KSM geführt"
+      },
+      "create": "Sammlung erstellen",
+      "drop": "Lege hier das Bild für die Sammlung fest, klicke auf Upload oder füge es einfach aus der Zwischenablage ein. Wir unterstützen die verschiedensten Dateitypen (PNG, JPEG, GIF, SVG)"
+    },
+    "nft": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Namen des NFT",
+        "message": "Name des NFT. So wird es in der Gallerie angezeigt"
+      },
+      "description": {
+        "label": "Beschreibung des NFT",
+        "placeholder": "Trage die Beschreibung des NFT ein",
+        "message": "Beschreibung deines NFT. Markdown wird unterstützt"
+      },
+      "edition": {
+        "label": "Edition",
+        "placeholder": "Minimum ist 1",
+        "message": "Anzahl der zu mintenden NFTs"
+      },
+      "creative": {
+        "heading": "Creative Minting"
+      },
+      "drop": "Lege dein NFT hier ab, klicke auf Upload oder füge es aus der Zwischenablage ein. AI Modelle schränken die Unterstützung für Creative Minting auf JPEG, PNG, GIF oder BMP Bilddateien ein. Die Datei muss kleiner als 4 MB sein, und größer als 50x50 Pixel sein. Realistische Fotografien erzielen die besten Ergebnisse.",
+      "cover": "Dein NFT benötigt ein Coverum in der Gallerie gesehen zu werden. Bitte lade ein Bild hoch (jpg/ png/ gif)",
+      "rmrkDescription": "Erstellung von Titel und Beschreibung ist fehlgeschlagen. Kontrolliere ob die hochgeladene Datei den Anforderungen des Creative Minting genügt: JPEG, PNG, GIF oder BMP mit weniger als 4MB und Maßen von mehr als 50x50 Pixeln.",
+      "simpleDrop": "Lege dein NFT hier ab, klicke auf Upload oder füge es aus der Zwischenablage ein. Wir unterstützen die verschiedensten Dateiformate (BMP, GIF, JPEG, PNG, SVG, TIFF, WEBP, MP4, OGV, QUICKTIME, WEBM, GLB, FLAC, MP3, JSON)"
+    }
+  },
+  "tooltip": {
+    "symbol": "Das Symbol das dem NFT anhängt: zum Beispiel wird Kusama mit KSM geführt",
+    "name": "NFT wird unter diesem Namen in der Gallerie angezeigt",
+    "edition": "Anzahl der Kopien",
+    "created": "Erstellt von",
+    "collections": "Sammlungen erstellt von",
+    "sold": "NFTs verkauft von",
+    "collected": "NFTs gesammelt von",
+    "buy": "Nur zum Verkauf eingestellte NFTs anzeigen",
+    "own": "Nur NFTs anzeigen, die Du besitzt",
+    "random": "Spring zu irgendeiner Seite",
+    "buyDisabled": "Nicht genug Guthaben",
+    "holdings": "NFTs im Besitz von",
+    "gains": "Gewinne",
+    "needToUploadNFTFile": "Du musst ein NFT hochladen",
+    "needToSetValidPrice": "Der Preis muss höher als 0 sein, um dein NFT zu listen",
+    "notEnoughBalance": "Unzureichendes Guthaben",
+    "haveNoToS": "Du hast keine Berechtigung dieses Asset zu verwenden"
+  },
+  "nft": {
+    "carbonless": "Dieses NFT ist CO2 befreit",
+    "burned": "NFT wurde verbrannt",
+    "description": "NFT Beschreibung",
+    "name": "Benenne dein NFT",
+    "frozen": "NFT ist eingefroren",
+    "related": "Mehr aus dieser Sammlung",
+    "visited": "Betrachtete NFTs",
+    "event": {
+      "MINTNFT": "MINTEN",
+      "LIST": "LISTEN",
+      "UNLIST": "ENTLISTEN",
+      "RELIST": "ERNEUT LISTEN",
+      "SEND": "VERSCHENKEN",
+      "CONSUME": "VERBRENNEN",
+      "BUY": "KAUFEN",
+      "MAKE_OFFER": "ANGEBOT MACHEN",
+      "DOWNLOAD": "DOWNLOADEN",
+      "ROYALTY": "TANTIEMEN",
+      "PAY_ROYALTY": "TANTIEMEN ZAHLEN"
+    },
+    "action": {
+      "submit": "Absenden {0}"
+    },
+    "properties": {
+      "label": "Merkmale"
+    }
+  },
+  "statsOverview": {
+    "buys": "Käufe",
+    "listed": "Gelistet",
+    "minted": "Gemintet",
+    "createdCollections": "Erstellte Sammlungen",
+    "activeWallets": "Aktive Konten",
+    "values": "VALUES"
+  },
+  "loader": {
+    "casting": "(1/3) Bereite die tx zur Blockcahin vor",
+    "finalized": "(3/3) Beendet",
+    "block": "(2/3) Transaktion im Block",
+    "pinImage": "Bild anpinnen",
+    "pinMeta": "Metadaten anpinnen",
+    "constructTx": "Transaktion wird erstellt",
+    "sign": "Auf Antwort des Unterzeichners warten",
+    "ipfs": "Lade Daten zu IPFS hoch",
+    "arweave": "Daten via PermaFrost speichern",
+    "uploading": "({0}/{1}) Uploade Daten zu IPFS",
+    "checkBalance": "Prüfe ob Du genug Guthaben hast"
+  },
+  "arweave": {
+    "uploadYes": "Lade NFT Bilddatei zu Arweave hoch",
+    "uploadNo": "Arweave nicht benutzen",
+    "tooltip": "Arweave nutzen, bedeutet das Du deine Multimedia Datei für immer auf Arweave speicherst, eignet sich gut für kleine Anlagen wie JPEG."
+  },
+  "carbonOffset": {
+    "carbonOffsetYes": "Ich erstelle ein CO2 befreites NFT",
+    "carbonOffsetNo": "Ich möchte kein CO2 befreites NFT",
+    "tooltip": "CO2 befreites NFT bedeutet, dass Du hilfst die Kosten für CO2 Zertifikate und Bäumepflanzen mitträgst"
+  },
+  "support": {
+    "tooltip": "Kosten decken, bedeutet das Nutzer mithelfen die entstehenden Kosten für KodaDot mitzutragen, welche dein JPEG in deinem Namen speichert."
+  },
+  "termOfService": {
+    "accept": "Hiermit bestätige ich, das ich über die gesamten Urheberrechte  of the submitted digital asset (or have sufficient permission by the owner to use the asset)"
+  },
+  "profile": {
+    "page": "Profil",
+    "user": "Nutzer",
+    "created": "Erstellt",
+    "collected": "Gesammelt",
+    "sold": "Verkauft",
+    "holdings": "Im Besitz",
+    "gains": "Gewinne",
+    "showQr": "QR anzeigen",
+    "collectedFromCreator": "{0} NFT(s) von diesem Künstler gesammelt"
+  },
+  "sales": {
+    "page": "Verkäufe",
+    "title": "Neueste Verkäufe auf KUSAMA",
+    "subtitle": "Und den kürzlich verkauften NFTs auf RMRK.",
+    "buyer": "Käufer",
+    "tableDate": "Relatives Datum",
+    "price": "Verkaufspreis"
+  },
+  "hot": {
+    "title": "Neueste Verkäufe auf KUSAMA in der letzten Woche",
+    "subtitle": "Und den kürzlich verkauften NFTs auf RMRK."
+  },
+  "spotlight": {
+    "page": "Rampenlicht",
+    "title": "Nutzer im Rampenlicht",
+    "subtitle": "Mit den aktivsten Sammlern und Künstlern auf RMRK.",
+    "filter_accounts": "Konten mit Identität",
+    "id": "Ersteller",
+    "sold": "Verkauft",
+    "unique": "∃!",
+    "total": "Insgesamt",
+    "averagePrice": "Ø Preis",
+    "count": "Σ Sammlung",
+    "collectors": "Sammler",
+    "score": "Score",
+    "empty": "Leer",
+    "uniqueCollectors": "∃! Sammler",
+    "soldHistory": "Verkauft in den letzten 30 Tagen",
+    "uniqueItemsTooltip": "Einzigartige Artikel",
+    "uniqueCollectorsTooltip": "Einzelne Sammler",
+    "scoreCalc": "verkauf * (einzigartig / insgesamt)"
+  },
+  "series": {
+    "title": "Top Sammlung",
+    "subtitle": "Die Top NFTs auf Kusama und RMRK, gelistet nach Volumen, Floorpreis und anderen Statisiken.",
+    "assets": "Assets",
+    "buys": "Käufe",
+    "collected": "Gesammelt",
+    "floorprice": "Floorpreis",
+    "averagePrice": "Durchschnittspreis",
+    "highestSale": "Höchster Verkauf",
+    "owners": "Besitzer",
+    "volume": "Volumen",
+    "score": "Bewertung",
+    "emoteCount": "Emotes",
+    "buyHistory": "Käufe der letzten 30 Tage",
+    "history": "Verlauf"
+  },
+  "activity": {
+    "listed": "Gelistet",
+    "totalItems": "Σ Artikel",
+    "todayTraded": "24St",
+    "totalTraded": "Σ Handelsvolumen",
+    "highestSale": "HÖCHSTER VERKAUF",
+    "totalBuys": "Σ KÄUFE",
+    "unique": "EINZIGARTIG",
+    "owners": "BESITZER",
+    "distribution": "VERTEILUNG",
+    "floorPrice": "FLOORPREIS"
+  },
+  "profileStats": {
+    "listed": "Gelistet",
+    "totalItems": "Σ Artikel",
+    "highestSale": "HÖCHSTER VERKAUF",
+    "totalBuys": "Σ KÄUFE",
+    "highestBuy": "Höchster Kauf",
+    "totalAmountSpend": "Σ Summe ausgegeben",
+    "holdingsNfts": "Wert des Kontos",
+    "maxSoldPrice": "Höchster Verkaufspreis",
+    "totalSellValues": "Σ Wert der Verkäufe",
+    "totalSoldItems": "Σ verkaufter Artikel",
+    "totalHoldingsBoughtValues": "Ausgegebene KSM für die NFTs im Konto"
+  },
+  "general": {
+    "apply": "Anwenden",
+    "using": "benutzen",
+    "balance": "Kontostand",
+    "connect": "Verbinden",
+    "connect_wallet": "Verbinde deine Wallet",
+    "change_account": "Konto wechseln",
+    "submit": "Absenden",
+    "remove": "Entfernen",
+    "correctAddress": "Addressformat korrigieren",
+    "copyUrl": "URL kopieren",
+    "openUrl": "URL öffnen",
+    "copyRewardTooltip": "Deinen Prämienlink in die Zwischenablage kopieren",
+    "copyRewardLink": "Kopiere den Prämienlink",
+    "latestSales": "Letzte Verkäufe",
+    "searchResultsText": "Ergebnisse anzeigen für",
+    "ksmDiscoverText": "Entdecke, sammle und verkaufe Kusama NFTs",
+    "latestSalesheading": "Entdecke die letzten Verkäufe auf RMRK",
+    "newestListDesc": "Entdecke die neuesten Artikel zum Kauf",
+    "newestListHeading": "Neu Gelistet",
+    "topCollectionsHeading": "Top Sammlungen",
+    "floor": "floor",
+    "popularCollectionsHeading": "Beliebte Sammlungen",
+    "popularCollectionsDesc": "Entdecke die belibtesten Sammlungen auf RMRK",
+    "from": "Von",
+    "to": "Zu",
+    "tx": {
+      "cancelled": "Transaktion wurde abgebrochen",
+      "feesPaidIn": "Du bezahlst die Gebühren in {0}"
+    },
+    "searchPlaceholder": "Suche nach Kunstwerk, Sammlung...",
+    "tagsAdd": "Schreib und drück Enter um deine eigenen hinzuzufügen",
+    "chooseWallet": "Wähle deine Wallet"
+  },
+  "helper": {
+    "seeMore": "Mehr anzeigen",
+    "learnMore": "Lerne mehr",
+    "noCollections": "Du hast keine Sammlungen",
+    "noInfinityCollections": "Du verfügst über keine Sammlung mit unbegrenzt vielen NFTs",
+    "indexerReadOnly": "Die App ist im Lesemodus, versuch die App neu zu laden oder besuch unseren Discord",
+    "clickToCreate": "Klick hier um eine Sammlung zu erstellen",
+    "urlToTransform": {
+      "label": "URL zum Umwandeln",
+      "placeholder": "singular.rmrk.app/collectibles/",
+      "copy": "Kodadot Link erfolgreich kopiert"
+    },
+    "builtOn": "Gebaut auf",
+    "signStuckText": "Hängts? Schau nach Popups und SIGNIERE die Transaktion."
+  },
+  "cookies": {
+    "notice": "Wir nutzen Drittanwender- 🍪 um dein Erlebnis auf dieser Seite zu personalisieren",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
+  },
+  "action": {
+    "admin": "Adminansicht",
+    "click": "Klicke für {0} NFT(s)",
+    "omitListed": "Überspringe gelistete NFT(s)",
+    "random": "Zufällig",
+    "distributionCount": "Prozent die verteilt werden",
+    "sendToMyself": "An mich selbst senden"
+  },
+  "identity": {
+    "page": "Identität",
+    "set": "Erstelle on-chain Identiät",
+    "click": "Klicke um Identität zu erstellen",
+    "handleRequired": "Dein Nutzername wird benötigt",
+    "deposit": "Einzahlen",
+    "fundsReserve": "0.0333 KSM werden festgesetzt. Der Betrag wird zurückerstattet wenn die Identität aufgelöst wird.",
+    "onChainPlaceholder": "Mein On-Chain Name",
+    "namePlaceholder": "Vollständiger Klarname"
+  },
+  "collapse": {
+    "collection": {
+      "description": {
+        "show": "Beschreibung anzeigen",
+        "hide": "Beschreibung verbergen"
+      },
+      "attributes": {
+        "show": "Zeige on-chain Attribute",
+        "hide": "Verberge on-chain Attribute"
+      }
+    }
+  },
+  "sharing": {
+    "collection": "Sie dir diese großartige Sammlung auf KodaDot an",
+    "nft": "Sieh dir dieses großartige NFT auf KodaDot an",
+    "pack": "Sieh dir dieses großartige Paket auf KodaDot an",
+    "profile": "Sieh dir dieses großartige Profil auf KodaDot an"
+  },
+  "warning": {
+    "newTransactionWhilePriceSet": "Um den Preis festzulegen, ist jetzt eine weitere Transaktion notwendig."
+  },
+  "teleport": {
+    "page": "Teleportieren",
+    "route": "Teleportiere {0} von {1} zu {2}",
+    "artistProfile": "Besuche das Profil des Künstlers",
+    "usdInput": "USD Wert (schätzungsw.)",
+    "btnCopyPayment": "Bezahllink kopieren",
+    "congratsSupport": "Vielen dank für die Unterstützung",
+    "tweetDonation": "Tweete über deine großzügige Spende",
+    "donationSentTo": "Deine Spende wird gesendet an:"
+  },
+  "preferences": {
+    "helpCoverCosts": "Helfen Sie mit, die Kosten zu decken",
+    "userData": "Benutzerdaten"
+  },
+  "navbar": {
+    "teleport": "Teleportieren"
+  },
+  "walletConnect": {
+    "walletHeading": "Wallet verbinden",
+    "authText": "KodaDot wird niemals nach deinem mnemonischen or privaten Key fragen.",
+    "authTip": "Warten auf Autorisierung",
+    "understand": "Ich verstehe",
+    "learnText": "Lerne wie man sich verbindet",
+    "downloadExtension": "Lade die Extension herunter"
+  },
+  "landing": {
+    "newNftHeading": "NFTs sind neu für Dich?",
+    "ksmArtistHeading": "KSM für Künstler",
+    "socials": "Hast Du Fragen oder möchtest auf dem Laufenden bleiben? Schreib uns ein paar Zeilen auf unseren Socials.",
+    "newNft": {
+      "click": "Klicke {0} eine Schritt-für-Schritt Anleitung!",
+      "here": "hier"
+    },
+    "artists": {
+      "hook": "Du kannst dich bei uns {0} und wir machen Dir ein paar freie Mints klar.",
+      "touch": "melden"
+    }
+  },
+  "history": {
+    "today": "Heute",
+    "yesterday": "Gestern",
+    "last7Days": "Letzte 7 Tage",
+    "thisMonth": "Diesen Monat",
+    "earlier": "Ältere"
+  },
+  "asset": {
+    "action": {
+      "default": "Währung für die Gebühr setzen",
+      "alreadyDefault": "Derzeitige Währung für die Gebühr"
+    },
+    "table": {
+      "balance": "Guthaben",
+      "empty": "Zur Zeit gibt es keine Posten von diesen Nutzer."
+    }
+  },
+  "ramp": {
+    "selectAccount": "Wähle dein Konto und klicke auf Kaufen.",
+    "redirect": "Du wirst zur Website von Ramp.network weitergeleitet um dein Konto aufzuladen.",
+    "kyc": "KYC ist erforderlich, aber Du kannst dich mit deiner Revolut Karte verifizieren.",
+    "buyKsm": "Kaufe Kusama"
+  },
+  "toast": {
+    "urlCopy": "URL in die Zwischenablage kopiert",
+    "paymentLinkCopy": "Bezahllink in die Zwischenablage kopiert"
+  }
+}

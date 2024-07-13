@@ -1,0 +1,9 @@
+fragment event on Event {
+  id
+  blockNumber
+  timestamp
+  caller
+  currentOwner
+  meta
+  interaction
+}

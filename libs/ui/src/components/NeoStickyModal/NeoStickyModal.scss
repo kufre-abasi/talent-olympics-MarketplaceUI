@@ -1,0 +1,8 @@
+.confirm-modal {
+  @media (max-width: 768px) {
+    @apply fixed #{!important};
+    @apply bottom-0 left-0 right-0 shadow-none;
+    @apply rounded-t-xl rounded-b-none #{!important};
+    @apply border-r-0 border-l-0 border-b-0 #{!important};
+  }
+}

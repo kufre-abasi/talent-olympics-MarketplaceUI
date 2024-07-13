@@ -1,0 +1,29 @@
+.message {
+  @apply bg-[whitesmoke] rounded-none text-base;
+
+
+  &__danger {
+    @apply bg-k-red-accent-2 text-k-red;
+
+    .message-progress {
+        @apply bg-k-red;
+    }
+  }
+
+  &__info  {
+    @apply bg-background-color text-k-blue;
+
+    .message-progress {
+        @apply bg-k-blue;
+    }
+  }
+
+  &__warning {
+      @apply bg-k-yellow-light text-k-orange4;
+
+    .message-progress {
+        @apply bg-k-orange4;
+    }
+  }
+
+}

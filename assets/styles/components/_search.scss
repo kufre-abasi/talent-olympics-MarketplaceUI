@@ -1,0 +1,223 @@
+.search-bar-container {
+  position: relative;
+  width: 100%;
+
+  .search-bar-collection-search {
+    @apply z-[2] absolute h-6 gap-[0.35rem] left-10 top-2 cursor-default;
+
+    span {
+      @apply h-5 px-4 py-0 rounded-[4rem];
+
+      @include ktheme() {
+        background: theme('blue-accent-bg-color');
+      }
+    }
+  }
+
+  .search-bar-bg {
+    @apply absolute w-full h-full z-0 left-1 top-1;
+    @include ktheme() {
+      background: theme('background-color');
+    }
+  }
+
+  .search-bar-keyboard-icon {
+    @apply z-[2] absolute h-[23px] pointer-events-none right-[18px] top-[9px];
+  }
+
+  .o-acp__menu {
+    max-height: 610px;
+
+    .o-acp__item {
+      padding: 0;
+      background: unset !important;
+      color: unset !important;
+    }
+  }
+}
+
+.gallery-search {
+  @apply z-[1];
+
+  .control .icon {
+    @include ktheme() {
+      color: theme('text-color') !important;
+    }
+  }
+
+  &--skip-button {
+    padding-right: 0px !important;
+  }
+
+  input {
+    @apply h-10 pl-[42px] pr-[50px] py-0 rounded-none;
+    outline: none;
+
+    &::placeholder {
+      margin-left: 10px;
+      font-weight: 400;
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: none;
+    }
+
+    @include ktheme() {
+      box-shadow: theme('primary-shadow');
+      border: 1px solid theme('border-color');
+      color: theme('text-color');
+      background: theme('background-color');
+
+      &::placeholder {
+        color: theme('placeholder-color') !important;
+      }
+
+      &:hover,
+      &:focus {
+        border: 1px solid theme('border-color');
+      }
+    }
+  }
+
+  &.is-collection-search {
+    input {
+      padding-left: 14.25rem !important;
+    }
+  }
+}
+
+.search-suggestion-container {
+  $desktop-padding-x: 32px;
+  .selected-item {
+    box-sizing: border-box;
+  }
+
+  .search-footer-link {
+    .link-item {
+      &:hover {
+        background: transparent !important;
+      }
+    }
+  }
+
+  .link-item {
+    @apply cursor-pointer;
+    border: 1px solid transparent;
+    padding: 10px $desktop-padding-x;
+    font-size: 16px;
+    &:hover {
+      @include ktheme() {
+        background-color: theme('k-accentlight2');
+      }
+    }
+  }
+
+  .loading-item {
+    padding: 10px $desktop-padding-x;
+  }
+
+  .secondary-info {
+    @include mobile {
+      flex-direction: column !important;
+    }
+
+    @include ktheme() {
+      color: theme('k-grey');
+    }
+  }
+
+  .small-soon-text {
+    font-size: 12px;
+    margin-bottom: 6px;
+    margin-left: 4px;
+  }
+
+  .tab-content {
+    padding-top: 0 !important;
+  }
+  .tabs ul {
+    @include ktheme() {
+      border-bottom-color: theme('placeholder-color');
+    }
+  }
+
+  .tabs li a {
+    display: flex;
+    padding: 10px 0;
+    justify-content: center;
+    border: none;
+  }
+
+  .tabs li.is-active a {
+    font-weight: 700;
+    @include ktheme() {
+      color: theme('text-color') !important;
+    }
+  }
+
+  .tabs:not(:last-child) {
+    margin-bottom: 0.5rem;
+    padding: 0px $desktop-padding-x;
+  }
+
+  .search-history {
+    @apply cursor-pointer;
+
+    @include ktheme() {
+      color: theme('k-grey');
+    }
+
+    .history-label {
+      font-size: 16px;
+      text-transform: none;
+    }
+
+    .remove-search-history {
+      padding: 5px;
+
+      &:hover {
+        @include ktheme() {
+          color: theme('k-hovergrey');
+        }
+      }
+    }
+
+    .search-history-item {
+      padding: 0 $desktop-padding-x;
+      &:hover {
+        @include ktheme() {
+          background-color: theme('k-accentlight2');
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1123px) {
+  .landing-search {
+    justify-content: space-evenly;
+  }
+  .landing-shapes {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .search-bar-container {
+    .o-acp__menu {
+      left: -28px;
+      width: 100vw;
+      max-height: 93dvh;
+      margin-top: .8rem;
+      border: none;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .landing-search {
+    justify-content: center;
+  }
+}

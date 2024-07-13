@@ -1,0 +1,100 @@
+.collection-card {
+  font-family: 'Work Sans';
+  @apply shadow-none rounded-none;
+
+  @include ktheme() {
+    border: 1px solid theme('card-border-color');
+    color: theme('text-color');
+    &:not(.loading):hover {
+      border-color: theme('border-color');
+      .collection-card__image-wrapper {
+        opacity: theme('card-hover-opacity');
+      }
+    }
+  }
+
+  &:not(.loading) {
+    @apply cursor-pointer;
+  }
+
+  a:hover {
+    color: unset !important;
+  }
+
+  &__image-wrapper {
+    padding-top: 112px !important;
+    &-sub {
+      height: 100%;
+      width: 100%;
+
+      @include ktheme() {
+        border: 6px solid theme('text-color-inverse');
+        img {
+          border: 1px solid theme('card-border-color');
+        }
+      }
+    }
+  }
+  .collection-detail {
+    $header-height: 55px;
+
+    @include ktheme() {
+      background: theme('background-color');
+    }
+
+    &__header {
+      height: $header-height;
+
+      @include ktheme() {
+        border-top: 1px solid theme('card-border-color');
+        border-bottom: 1px solid theme('card-border-color');
+      }
+
+      &-image-wrapper {
+        height: 80px;
+        min-width: 80px;
+        padding: 0 !important;
+        transform: translate(15px, -50%);
+
+        @include ktheme() {
+          background: theme('background-color');
+          border-top: 1px solid theme('card-border-color');
+        }
+
+        &::before,
+        &::after {
+          @apply content-[''] absolute w-px h-[39px] z-[1] left-0 top-0;
+
+          @include ktheme() {
+            background: theme('card-border-color');
+          }
+        }
+        &::after {
+          left: unset;
+          right: 0;
+        }
+      }
+    }
+    &__name {
+      @apply text-ellipsis font-bold text-base overflow-hidden whitespace-nowrap pl-8 pr-5;
+      line-height: $header-height;
+      &:hover {
+        @include ktheme() {
+          color: theme('link-hover');
+        }
+      }
+    }
+
+    .detail-item {
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+      font-weight: 700;
+      padding-right: 0;
+      height: 67px;
+      &__title {
+        font-weight: 400;
+        min-width: 80px;
+      }
+    }
+  }
+}

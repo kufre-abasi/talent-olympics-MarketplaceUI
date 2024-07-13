@@ -1,0 +1,105 @@
+.opacitySlide-enter-active {
+  transition: 0.7s ease-in-out;
+}
+.opacitySlide-leave-active {
+  transition: 0.7s ease-in-out;
+}
+.opacitySlide-enter-to,
+.opacitySlide-leave {
+  max-height: 100px;
+  overflow: hidden;
+  opacity: 1;
+}
+.opacitySlide-enter,
+.opacitySlide-leave-to {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+// global CSS for page transitions
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 250ms;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.animation-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.5s;
+}
+
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cardHoverIn {
+  0% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: var(--card-box-shadow);
+  }
+}
+
+@keyframes cardHoverOut {
+  0% {
+    box-shadow: var(--card-box-shadow);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+// ... dots
+@keyframes dots {
+  0% {
+    content: ".";
+  }
+  33% {
+    content: "..";
+  }
+  66% {
+    content: "...";
+  }
+}
+
+.dots {
+  @apply text-center inline-block;
+}
+
+.dots::after {
+  content: "";
+  display: inline-block;
+  animation: dots 1.5s infinite;
+}

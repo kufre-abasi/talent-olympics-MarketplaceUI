@@ -1,0 +1,341 @@
+<template>
+  <div>
+    <SigningModal
+      v-if="!autoTeleport"
+      :title="$t('listingCart.listingNft', itemCount)"
+      :is-loading="isLoading"
+      :status="status"
+      close-in-block
+      @try-again="submitListing" />
+
+    <NeoModal
+      :value="isSuccessModalOpen"
+      append-to-body
+      @close="handleSuccessModalClose">
+      <ModalBody :title="$t('success')" @close="handleSuccessModalClose">
+        <SuccessfulListingBody
+          :tx-hash="txHash"
+          :items="items"
+          :status="status" />
+      </ModalBody>
+    </NeoModal>
+
+    <NeoModal
+      :value="preferencesStore.listingCartModalOpen"
+      append-to-body
+      @close="onClose">
+      <ModalBody
+        modal-max-height="100vh"
+        :title="title"
+        content-class="pt-4 pb-5 px-0"
+        :scrollable="false"
+        :loading="!autoTeleportLoaded"
+        @close="onClose">
+        <div class="px-6 max-h-[50vh] overflow-y-auto">
+          <ModalIdentityItem />
+
+          <ListingCartSingleItemCart
+            v-if="listingCartStore.count === 1"
+            v-model:fixedPrice="fixedPrice"
+            v-model:floorPricePercentAdjustment="floorPricePercentAdjustment"
+            @setFixedPrice="setFixedPrice" />
+
+          <ListingCartMultipleItemsCart
+            v-else
+            v-model:fixedPrice="fixedPrice"
+            v-model:floorPricePercentAdjustment="floorPricePercentAdjustment"
+            @setFixedPrice="setFixedPrice" />
+        </div>
+
+        <div class="border-t pt-5 pb-4 px-6">
+          <div class="flex justify-between">
+            {{ $t('listingCart.potentialEarnings') }}
+            <div class="flex">
+              <span class="ml-2 text-k-grey"
+                >{{ totalNFTsPrice.toFixed(4) }} {{ chainSymbol }}</span
+              >
+              <span class="font-bold ml-2"> ${{ priceUSD }} </span>
+            </div>
+          </div>
+
+          <div
+            class="flex justify-between text-k-grey pb-4 mt-3 border-b-k-shade">
+            <span>{{ $t('listingCart.listingFees') }}</span>
+            <span class="ml-2">{{ teleportTransitionTxFees }}</span>
+          </div>
+        </div>
+
+        <div class="flex justify-between px-6">
+          <AutoTeleportActionButton
+            ref="autoteleportButton"
+            :actions="actions"
+            :disabled="confirmButtonDisabled"
+            :fees="{ forceActionAutoFees: true }"
+            :label="confirmListingLabel"
+            early-success
+            auto-close-modal
+            :auto-close-modal-delay-modal="0"
+            @confirm="confirm" />
+        </div>
+      </ModalBody>
+    </NeoModal>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { Interaction } from '@kodadot1/minimark/v1'
+import { prefixToToken } from '@/components/common/shoppingCart/utils'
+import { NeoModal } from '@kodadot1/brick'
+import ModalBody from '@/components/shared/modals/ModalBody.vue'
+import { usePreferencesStore } from '@/stores/preferences'
+import { TokenToList } from '@/composables/transaction/types'
+import { ListCartItem, useListingCartStore } from '@/stores/listingCart'
+import format, { calculateBalance } from '@/utils/format/balance'
+import { warningMessage } from '@/utils/notification'
+import { useFiatStore } from '@/stores/fiat'
+import { calculateExactUsdFromToken } from '@/utils/calculation'
+import { sum } from '@/utils/math'
+import ModalIdentityItem from '@/components/shared/ModalIdentityItem.vue'
+import AutoTeleportActionButton, {
+  type AutoTeleportActionButtonConfirmEvent,
+} from '@/components/common/autoTeleport/AutoTeleportActionButton.vue'
+import ListingCartSingleItemCart from './singleItemCart/ListingCartSingleItemCart.vue'
+import ListingCartMultipleItemsCart from './multipleItemsCart/ListingCartMultipleItemsCart.vue'
+import type { Actions } from '@/composables/transaction/types'
+import type { AutoTeleportAction } from '@/composables/autoTeleport/types'
+import { hasOperationsDisabled } from '@/utils/prefix'
+
+const { urlPrefix } = usePrefix()
+const preferencesStore = usePreferencesStore()
+const listingCartStore = useListingCartStore()
+const { $i18n } = useNuxtApp()
+const {
+  transaction,
+  isLoading,
+  status,
+  isError,
+  blockNumber,
+  txHash,
+  clear: clearTransaction,
+} = useTransaction()
+
+const { isTransactionSuccessful } = useTransactionSuccessful({
+  status,
+  isError,
+})
+
+const { chainSymbol, decimals } = useChain()
+
+const fixedPrice = ref()
+const floorPricePercentAdjustment = ref()
+const autoTeleport = ref(false)
+const autoteleportButton = ref()
+const itemCount = ref(listingCartStore.count)
+const items = ref<ListCartItem[]>([])
+const autoTeleportLoaded = ref(false)
+
+const isSuccessModalOpen = computed(
+  () => Boolean(items.value.length) && isTransactionSuccessful.value,
+)
+
+const teleportTransitionTxFees = computed(() =>
+  format(
+    autoteleportButton.value?.optimalTransition.txFees || 0,
+    decimals.value,
+    chainSymbol.value,
+  ),
+)
+
+function setFixedPrice() {
+  const rate = Number(fixedPrice.value) || 0
+
+  listingCartStore.setFixedPrice(rate)
+}
+
+watch(floorPricePercentAdjustment, (rate) => {
+  listingCartStore.setFloorPrice(rate)
+})
+
+const fiatStore = useFiatStore()
+const action = ref<Actions>(emptyObject<Actions>())
+const actions = computed<AutoTeleportAction[]>(() => [
+  {
+    action: action.value,
+    transaction,
+    details: {
+      isLoading: isLoading.value,
+      status: status.value,
+      isError: isError.value,
+      blockNumber: blockNumber.value,
+    },
+  },
+])
+
+const priceUSD = computed(() =>
+  calculateExactUsdFromToken(
+    totalNFTsPrice.value,
+    Number(fiatStore.getCurrentTokenValue(prefixToToken[urlPrefix.value])),
+  ),
+)
+
+const totalNFTsPrice = computed(() =>
+  Number(
+    sum(
+      listingCartStore.itemsInChain.map((nft) => Number(nft.listPrice || 0)),
+    ).toFixed(4),
+  ),
+)
+
+const cartHasNFTsWithPrice = computed(() =>
+  listingCartStore.itemsInChain.map((nft) => Number(nft.price)).some(Boolean),
+)
+const showChangePriceModal = computed(
+  () => cartHasNFTsWithPrice.value && listingCartStore.count === 1,
+)
+
+const title = computed(() => {
+  const items =
+    listingCartStore.count === 1
+      ? 'NFT'
+      : `${listingCartStore.count} ${$i18n.t('items')}`
+
+  return showChangePriceModal.value
+    ? $i18n.t('transaction.price.change')
+    : `List ${items}`
+})
+
+const confirmButtonDisabled = computed(
+  () =>
+    hasOperationsDisabled(urlPrefix.value) ||
+    Boolean(listingCartStore.incompleteListPrices) ||
+    !autoteleportButton.value?.isReady,
+)
+
+const confirmListingLabel = computed(() => {
+  if (hasOperationsDisabled(urlPrefix.value)) {
+    return $i18n.t('toast.unsupportedOperation')
+  }
+  switch (listingCartStore.incompleteListPrices) {
+    case 0:
+      if (!autoteleportButton.value?.isReady) {
+        return $i18n.t('autoTeleport.checking')
+      }
+
+      return showChangePriceModal.value
+        ? $i18n.t('transaction.price.change')
+        : $i18n.t('listingCart.complete')
+    case 1:
+      return listingCartStore.count === 1
+        ? $i18n.t('listingCart.inputPriceFirst')
+        : $i18n.t('listingCart.missing1')
+    default:
+      return `${listingCartStore.incompleteListPrices} ${$i18n.t(
+        'listingCart.missingMultiple',
+      )}`
+  }
+})
+
+const getAction = (items: ListCartItem[]): Actions => {
+  const token = items
+    .filter((item): item is ListCartItem & { listPrice: number } =>
+      Boolean(item.listPrice),
+    )
+    .map((item) => ({
+      price: String(calculateBalance(item.listPrice, decimals.value)),
+      nftId: item.id,
+    })) as TokenToList[]
+
+  return {
+    interaction: Interaction.LIST,
+    urlPrefix: urlPrefix.value,
+    token,
+    successMessage: $i18n.t('transaction.price.success') as string,
+    errorMessage: $i18n.t('transaction.price.error') as string,
+  }
+}
+
+const submitListing = () => {
+  return transaction(getAction(items.value || []))
+}
+
+async function confirm({ autoteleport }: AutoTeleportActionButtonConfirmEvent) {
+  try {
+    clearTransaction()
+
+    autoTeleport.value = autoteleport
+    itemCount.value = listingCartStore.count
+    items.value = [...listingCartStore.itemsInChain]
+
+    if (!autoteleport) {
+      await submitListing()
+    }
+
+    listingCartStore.clearListedItems()
+    closeListingCartModal()
+    resetCartToDefaults()
+  } catch (error) {
+    warningMessage(error)
+  }
+}
+
+const onClose = () => {
+  resetCartToDefaults()
+  closeListingCartModal()
+}
+
+const handleSuccessModalClose = () => {
+  items.value = []
+}
+
+const resetCartToDefaults = () => {
+  fixedPrice.value = undefined
+  floorPricePercentAdjustment.value = undefined
+}
+
+watch(
+  () => listingCartStore.count,
+  () => {
+    if (listingCartStore.count === 0) {
+      closeListingCartModal()
+    }
+  },
+)
+
+watch(
+  () => preferencesStore.listingCartModalOpen,
+  (listingCartModalOpen) => {
+    if (!listingCartModalOpen) {
+      listingCartStore.clearDiscardedItems()
+    }
+  },
+)
+
+watch(
+  () => autoteleportButton.value?.isReady,
+  () => {
+    if (autoteleportButton.value?.isReady && !autoTeleportLoaded.value) {
+      autoTeleportLoaded.value = true
+    }
+  },
+)
+
+watchSyncEffect(() => {
+  if (!autoTeleport.value) {
+    action.value = getAction(listingCartStore.itemsInChain)
+  }
+})
+
+const closeListingCartModal = () =>
+  (preferencesStore.listingCartModalOpen = false)
+
+onBeforeMount(closeListingCartModal)
+onUnmounted(closeListingCartModal)
+</script>
+
+<style lang="scss" scoped>
+:deep(.identity-name-font-weight-regular) {
+  .identity-name {
+    font-weight: unset !important;
+  }
+}
+</style>

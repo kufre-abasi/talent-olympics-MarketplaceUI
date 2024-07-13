@@ -1,0 +1,13 @@
+.keyboard-shortcut-kbd {
+  color: #333;
+  background-color: #eee;
+  border: 1px solid #b4b4b4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .2), 0 2px 0 0 rgba(255, 255, 255, .7) inset;
+  @apply inline-block font-bold leading-none whitespace-nowrap px-1 py-0.5 rounded-[3px];
+}
+
+.keyboard-shortcuts {
+  .card.bordered:not(:last-of-type) {
+    border-bottom: none;
+  }
+}

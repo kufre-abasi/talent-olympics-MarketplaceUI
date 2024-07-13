@@ -1,0 +1,45 @@
+.common-price-chart {
+  position: relative;
+
+  .chart-y-description {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .time-range-dropdown {
+    $width: 89px;
+    $height: 30px;
+    $font-size: 12px;
+
+    position: absolute;
+    right: 60px;
+    top: -8px;
+    font-size: $font-size;
+
+    .o-drop__menu {
+      width: $width;
+      min-width: $width;
+      padding: 0;
+      margin: 0;
+      margin-top: 16px;
+    }
+
+    &-item {
+      height: $height;
+      font-size: inherit;
+    }
+
+    .time-range-button {
+      height: $height;
+      min-width: $width;
+      font-size: $font-size;
+    }
+
+    @include until(400px) {
+      .o-drop__menu, .time-range-button {
+        width: 70px;
+        min-width: 70px;
+      }
+    }
+  }
+}
